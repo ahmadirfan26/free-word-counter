@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Word Counter - Count Words & Characters Online</title>
+  <meta name="description" content="Free online word counter and character counter tool. Fast, accurate, and easy-to-use text counter for essays, blogs, and social media.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f6f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 650px;
+    }
+    h1 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+    }
+    textarea {
+      width: 100%;
+      height: 180px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      resize: vertical;
+      outline: none;
+    }
+    textarea:focus {
+      border-color: #007bff;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 15px 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
+    .btn-clear {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-clear:hover {
+      background-color: #c82333;
+    }
+    .seo-info {
+      margin-top: 30px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .seo-info h2 {
+      font-size: 18px;
+      color: #222;
+      margin-bottom: 8px;
+    }
+    .seo-info p {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Free Word Counter</h1>
+
+    <textarea id="text" placeholder="Type or paste your text here..."></textarea>
+
+    <div class="stats">
+      <div>Words: <span id="wordCount">0</span></div>
+      <div>Characters: <span id="charCount">0</span></div>
+    </div>
+
+    <button class="btn-clear" onclick="clearText()">Clear Text</button>
+
+    <!-- SEO Content for Google Ranking -->
+    <div class="seo-info">
+      <h2>About Free Online Word Counter</h2>
+      <p>Free Word Counter is an easy-to-use online tool designed to count words and characters in real time. Perfect for writers, students, bloggers, and social media creators who need to track text limits.</p>
+      
+      <h2>Frequently Asked Questions</h2>
+      <p><strong>Is this tool free?</strong> Yes, this word counter is 100% free with no limits.</p>
+      <p><strong>Does it save my data?</strong> No, all counting happens directly in your browser. Your text is safe and private.</p>
+    </div>
+  </div>
+
+  <script>
+    const textArea = document.getElementById('text');
+    const wordCount = document.getElementById('wordCount');
+    const charCount = document.getElementById('charCount');
+
+    textArea.addEventListener('input', () => {
+      const text = textArea.value.trim();
+      charCount.innerText = textArea.value.length;
+      wordCount.innerText = text ? text.split(/\s+/).filter(Boolean).length : 0;
+    });
+
+    function clearText() {
+      textArea.value = '';
+      wordCount.innerText = '0';
+      charCount.innerText = '0';
+    }
+  </script>
+
+</body>
+</html>
